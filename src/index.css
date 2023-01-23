@@ -1,13 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply font-ubuntu text-gray-700
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn-blue {
+  @apply text-center py-2 text-sm text-white bg-blue-500 w-full rounded-md hover:bg-blue-600 transition duration-300
+}
+
+.btn-yellow {
+  @apply text-center py-2 text-sm text-white bg-yellow-600 w-full rounded-md hover:bg-yellow-700 transition duration-300
+}
+
+.btn-green {
+  @apply text-center py-2 text-sm text-white bg-green-500 w-full rounded-md hover:bg-green-600 transition duration-300
+}
+
+.btn-gray {
+  @apply text-center py-2 text-sm text-white bg-gray-300 w-full rounded-md hover:bg-gray-400 transition duration-300
+}
+
+.btn-red {
+  @apply text-center py-2 text-sm text-white bg-red-500 w-full rounded-md hover:bg-red-600 transition duration-300
+}
+
+.form-control {
+  @apply bg-transparent text-sm px-3 py-2 border border-gray-400 border-opacity-30 rounded-md rounded-l-none w-full font-light outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-20 transition duration-300 dark:text-white
+}
+
+.form-date {
+  @apply bg-transparent text-sm px-3 py-[7px] border border-gray-400 border-opacity-30 rounded-md rounded-l-none w-full font-light outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-20 transition duration-300 dark:text-white
+}
+
+.form-file {
+  @apply bg-transparent text-sm px-3 py-[5px] border border-gray-400 border-opacity-30 rounded-md rounded-l-none w-full font-light outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-20 transition duration-300 dark:text-white
+}
+
+.form-icon {
+  @apply bg-transparent px-3 py-1 border border-r-0 border-gray-400 border-opacity-30 rounded-r-none rounded-md w-fit
+}
+
+.textarea-icon {
+  @apply bg-transparent px-3 py-[34px] border border-r-0 border-gray-400 border-opacity-30 rounded-r-none rounded-md w-fit
+}
+
+.error-box {
+  @apply py-2 bg-red-500 bg-opacity-20 rounded-md mt-4
+}
+
+.error-text {
+  @apply text-red-500 text-sm text-center
+}
+
+.success-box {
+  @apply py-2 bg-green-500 bg-opacity-20 rounded-md mt-4
+}
+
+.success-text {
+  @apply text-green-500 text-sm text-center
+}
+
+.welcome-wrapper {
+  @apply bg-white rounded-md shadow-md px-4 pt-4 md:flex md:justify-between md:pt-0 md:gap-4 lg:px-6 lg:mt-6 dark:bg-gray-700
 }
