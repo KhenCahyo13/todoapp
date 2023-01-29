@@ -29,6 +29,7 @@ const Form = () => {
                 setDescription('')
                 setTimeout(() => {
                     setMsg('')
+                    window.location.reload()
                 }, 3000)
             }) 
         } catch (error) {
@@ -54,7 +55,7 @@ const Form = () => {
                     </div>
             }
             <div className="block md:flex md:justify-between md:items-center md:gap-4 lg:gap-16">
-                <form className="w-full lg:w-[80%]">
+                <form onSubmit={handleTodo}  className="w-full lg:w-[80%]">
                     <div className="items-center mt-6 hidden">
                         <div className="form-icon">
                             <i className="fa-solid fa-user text-blue-500 text-lg"></i>
@@ -80,7 +81,7 @@ const Form = () => {
                         <textarea onChange={(event) => setDescription(event.target.value)} value={description} className="form-control" cols="30" rows="4" placeholder="Add description"></textarea>
                     </div>
                     <div className="flex items-center mt-4 gap-4 lg:w-[40%]">
-                        <button onClick={handleTodo} className="btn-blue">Create Todo</button>
+                        <button className="btn-blue">Create Todo</button>
                         <button onClick={handleReset} className="btn-yellow">Reset Form</button>
                     </div>
                 </form>
