@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import "../styles/Header.css"
 
 const Header = () => {
@@ -34,15 +34,15 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="flex items-center gap-2 lg:hidden">
-                    <div onClick={handleTheme} className="btn-theme">
+                    <button onClick={handleTheme} className="btn-theme">
                         <i className="fa-solid fa-moon text-white"></i>
-                    </div>
-                    <div className="btn-setting">
+                    </button>
+                    <Link to="/setting"><button className="btn-setting">
                         <i className="fa-solid fa-gear text-white"></i>
-                    </div>
-                    <div onClick={handleLogout} className="btn-logout">
+                    </button></Link>
+                    <button onClick={handleLogout} className="btn-logout">
                         <i className="fa-solid fa-right-from-bracket text-white"></i>
-                    </div>
+                    </button>
                 </div>
                 <div className="hidden lg:flex lg:items-center lg:gap-5">
                     <div onClick={handleTheme} className="btn-theme">

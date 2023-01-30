@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route  } from "react-router-dom"
 import SignUp from "./pages/SignUp"
 import VerificationEmail from "./pages/VerificationEmail"
 import Home from "./pages/Home"
+import Setting from "./pages/Setting"
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/todoapp/users/:token" element={<VerificationEmail />} />
                     <Route path="/home" element={<Home />} />
+                    <Route path="/setting" element={<Setting />} />
                 </Routes>
             </BrowserRouter>
         </>
