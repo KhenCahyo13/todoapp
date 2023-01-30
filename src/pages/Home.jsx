@@ -19,6 +19,9 @@ const Home = () => {
             <div className="mt-4">
                 <Todos />
             </div>
+            <div className="mt-8">
+                <p className="text-sm text-center text-gray-400">TodoApp - 2023 - Created by Khen Cahyo</p>
+            </div>
         </section>
     )
 }

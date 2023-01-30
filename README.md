@@ -1,6 +1,6 @@
 # ToDo App Create With ReactJS
 
-ToDo App which is made using ReactJS as Frontend and NodeJS as RestAPI for backend.
+ToDo App which is made using ReactJS & TailwindCSS as Frontend and NodeJS as RestAPI for backend.
 
 ## Featured Features
 
