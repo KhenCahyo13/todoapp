@@ -7,7 +7,6 @@ import Swal from "sweetalert2"
 const ForgotPassword = () => {
     const [email, setEmail] = useState('')
     const [fullname, setFullname] = useState('')
-    const [idUser, setIdUser] = useState('')
     const [url, setUrl]= useState('')
     const form = useRef();
     const navigate = useNavigate()

@@ -17,7 +17,7 @@ const ToDo = () => {
         const parse = JSON.parse(storing)
 
         // Storing ToDo List by Fullname User in Database
-        axios.get(`https://todosapp-restapi.khencahyo.repl.co/todoapp/todo/${parse.fullname}`)
+        axios.get(`https://todosapp-restapi.khencahyo.repl.co/todoapp/todo/${parse.id_user}`)
         .then((response) => {
             setTodos(response.data.data)
         }).catch((error) => {
@@ -129,7 +129,7 @@ const Process = () => {
         const storing = localStorage.getItem('user')
         const parse = JSON.parse(storing)
 
-        axios.get(`https://todosapp-restapi.khencahyo.repl.co/todoapp/todo/process/${parse.fullname}`)
+        axios.get(`https://todosapp-restapi.khencahyo.repl.co/todoapp/todo/process/${parse.id_user}`)
         .then((response) => {
             setList(response.data.data)
         })
@@ -210,7 +210,7 @@ const Completed = () => {
         const storing = localStorage.getItem('user')
         const parse = JSON.parse(storing)
 
-        axios.get(`https://todosapp-restapi.khencahyo.repl.co/todoapp/todo/completed/${parse.fullname}`)
+        axios.get(`https://todosapp-restapi.khencahyo.repl.co/todoapp/todo/completed/${parse.id_user}`)
         .then((response) => {
             setList(response.data.data)
         })

@@ -43,7 +43,7 @@ const Setting = () => {
                     timer: 2000
                 })
                 setTimeout(() => {
-                    navigate('/home')
+                    navigate('/')
                 }, 2000)
             })
 
@@ -114,6 +114,7 @@ const Setting = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
+              axios.delete(`https://todosapp-restapi.khencahyo.repl.co/todoapp/todo/all/${parse.id_user}`)  
               axios.delete(`https://todosapp-restapi.khencahyo.repl.co/todoapp/users/delete/${parse.id_user}`)
               .then((response) => {
                   localStorage.removeItem('user')
