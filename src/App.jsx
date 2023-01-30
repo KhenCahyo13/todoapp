@@ -14,10 +14,10 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route element={<ProtectedRoute />}>
-                        <Route path="/todoapp/users/:token" element={<VerificationEmail />} />
                         <Route path="/" element={<Home />} />
                         <Route path="/setting" element={<Setting />} />
                     </Route>
+                    <Route path="/todoapp/users/:token" element={<VerificationEmail />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/signin" element={<SignIn />} />
                     <Route path="/forgotpassword" element={<ForgotPassword />} />
