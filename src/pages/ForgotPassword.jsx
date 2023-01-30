@@ -20,7 +20,7 @@ const ForgotPassword = () => {
             }).then((response) => {
                 localStorage.setItem('id_user', JSON.stringify(response.data.data[0].id_user))
                 setFullname(response.data.data[0].fullname)
-                setUrl('http://localhost:3000/resetpassword/' + response.data.data[0].id_user)
+                setUrl('https://todoapp-khencahyo13.vercel.app/resetpassword/' + response.data.data[0].id_user)
                 Swal.fire({
                     title: 'Are you sure?',
                     text: "Are you sure you have forgotten your password?",
