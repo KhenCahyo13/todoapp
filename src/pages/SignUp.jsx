@@ -56,31 +56,31 @@ const SignUp = () => {
                         <div className="form-icon">
                             <i className="fa-solid fa-user text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setFullname(event.target.value)} value={fullname} type="text" className="form-control" placeholder="Enter your fullname" />
+                        <input onChange={(event) => setFullname(event.target.value)} value={fullname} type="text" className="form-control" placeholder="Enter your fullname" required />
                     </div>
                     <div className="flex items-center mt-4">
                         <div className="form-icon">
                             <i className="fa-solid fa-envelope text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setEmail(event.target.value)} value={email} type="email" className="form-control" placeholder="Enter your email address" />
+                        <input onChange={(event) => setEmail(event.target.value)} value={email} type="email" className="form-control" placeholder="Enter your email address" required />
                     </div>
                     <div className="flex items-center mt-4">
                         <div className="form-icon">
                             <i className="fa-solid fa-lock text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setPassword(event.target.value)} value={password} type="password" className="form-control" placeholder="Enter your password" />
+                        <input onChange={(event) => setPassword(event.target.value)} value={password} type="password" className="form-control" placeholder="Enter your password" required />
                     </div>
                     <div className="flex items-center mt-4">
                         <div className="form-icon">
                             <i className="fa-solid fa-lock text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setConfPassword(event.target.value)} value={confPassword} type="password" className="form-control" placeholder="Enter your confirm password" />
+                        <input onChange={(event) => setConfPassword(event.target.value)} value={confPassword} type="password" className="form-control" placeholder="Enter your confirm password" required />
                     </div>
                     <div className="flex items-center mt-4">
                         <div className="form-icon">
                             <i className="fa-solid fa-image text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setPicture(event.target.files[0])} type="file" accept="image/png, image/jpeg, image/jpg" className="form-file" id="profilePicture" />
+                        <input onChange={(event) => setPicture(event.target.files[0])} type="file" accept="image/png, image/jpeg, image/jpg" className="form-file" id="profilePicture" required />
                     </div>
                     <div className="mt-5">
                         <button className="btn-blue">Sign Up</button>
@@ -88,7 +88,7 @@ const SignUp = () => {
                 </form>
             </div>
             <div className="mt-6">
-                <p className="text-center text-sm">Already have account.? <Link to="/" className="text-blue-500 cursor-pointer font-medium">Sign In</Link></p>
+                <p className="text-center text-sm">Already have account.? <Link to="/signin" className="text-blue-500 cursor-pointer font-medium">Sign In</Link></p>
             </div>
         </section>
     )

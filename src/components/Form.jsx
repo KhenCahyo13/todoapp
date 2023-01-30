@@ -66,13 +66,13 @@ const Form = () => {
                         <div className="form-icon">
                             <i className="fa-solid fa-pencil text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setName(event.target.value)} value={name} type="text" className="form-control" placeholder="Enter your todo name" />
+                        <input onChange={(event) => setName(event.target.value)} value={name} type="text" className="form-control" placeholder="Enter your todo name" required />
                     </div>
                     <div className="flex items-center mt-4">
                         <div className="form-icon">
                             <i className="fa-solid fa-calendar text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setDate(event.target.value)} value={date} type="date" className="form-date" />
+                        <input onChange={(event) => setDate(event.target.value)} value={date} type="date" className="form-date" required />
                     </div>
                     <div className="flex items-center mt-4">
                         <div className="textarea-icon">

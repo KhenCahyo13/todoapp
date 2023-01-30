@@ -20,7 +20,7 @@ const SignIn = () => {
                 setLoading(true)
                 setMsg(response.data.msg + ', please wait...')
                 setTimeout(() => {
-                    navigate('/home')
+                    navigate('/')
                 }, 2000)
             })
         } catch (error) {
@@ -44,13 +44,13 @@ const SignIn = () => {
                         <div className="form-icon">
                             <i className="fa-solid fa-envelope text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setEmail(event.target.value)} value={email} type="email" className="form-control" placeholder="Enter your email address" />
+                        <input onChange={(event) => setEmail(event.target.value)} value={email} type="email" className="form-control" placeholder="Enter your email address" required />
                     </div>
                     <div className="flex items-center mt-4">
                         <div className="form-icon">
                             <i className="fa-solid fa-lock text-blue-500 text-lg"></i>
                         </div>
-                        <input onChange={(event) => setPassword(event.target.value)} value={password} type="password" className="form-control" placeholder="Enter your password" />
+                        <input onChange={(event) => setPassword(event.target.value)} value={password} type="password" className="form-control" placeholder="Enter your password" required />
                     </div>
                     <div className="mt-5">
                         <button className="btn-blue">{ loading ? "Loading..." : "Sign In" }</button>
@@ -59,7 +59,7 @@ const SignIn = () => {
             </div>
             <div className="mt-6">
                 <p className="text-center text-sm">Don't have account.? <Link to="/signup" className="text-blue-500 cursor-pointer font-medium">Sign Up</Link></p>
-                <p className="text-center text-sm mt-2">Forgot your password.? <span className="text-blue-500 cursor-pointer font-medium">Reset Password</span></p>
+                <p className="text-center text-sm mt-2">Forgot your password.? <Link to="/forgotpassword" className="text-blue-500 cursor-pointer font-medium">Reset Password</Link></p>
             </div>
         </section>
     )

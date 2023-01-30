@@ -21,11 +21,11 @@ const EditModal = ({ open, onClose, name, cName, date, cDate, description, cDesc
     }
 
     return (
-        <div className="bg-gray-900 bg-opacity-20 w-full min-h-screen fixed top-0 left-0 px-8 py-32 md:px-32 lg:px-96">
-            <div className="bg-white rounded-md shadow-md px-4 py-4">
+        <div className="bg-gray-900 bg-opacity-20 w-full min-h-screen fixed top-0 left-0 px-8 py-32 md:px-32 lg:px-96 dark:bg-blue-600 dark:bg-opacity-10">
+            <div className="bg-white rounded-md shadow-md px-4 py-4 dark:bg-gray-700">
                 <div className="flex items-center justify-between">
-                    <h1 className="font-medium text-lg">Modal Form Edit ToDo</h1>
-                    <button onClick={onClose}><i className="fa-solid fa-xmark"></i></button>
+                    <h1 className="font-medium text-lg dark:text-white">Modal Form Edit ToDo</h1>
+                    <button onClick={onClose}><i className="fa-solid fa-xmark dark:text-white"></i></button>
                 </div>
                 {
                     msg &&

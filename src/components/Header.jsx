@@ -6,14 +6,33 @@ const Header = () => {
     const navigate = useNavigate()
     const [picture, setPicture] = useState('')
     const [fullname, setFullname] = useState('')
+    const [isChecked, setIsChecked] = useState(false)
+
+    useEffect(() => {
+        const storing = localStorage.getItem('theme')
+        if (storing === 'dark') {
+            document.querySelector('html').classList.add('dark')
+            setIsChecked(true)
+        } else {
+            document.querySelector('html').classList.remove('dark')
+            setIsChecked(false)
+        }
+    })
 
     const handleTheme = () => {
-        document.querySelector('html').classList.toggle('dark')
+        setIsChecked(!isChecked)
+        if (!isChecked) {
+            document.querySelector('html').classList.add('dark')
+            localStorage.theme = 'dark'
+        } else {
+            document.querySelector('html').classList.remove('dark')
+            localStorage.theme = 'light'
+        }
     }
 
     const handleLogout = () => {
         localStorage.removeItem('user')
-        navigate('/')    
+        navigate('/signin')    
     }
     
     useEffect(() => {
@@ -30,12 +49,15 @@ const Header = () => {
                     <img src={picture} alt="ProfilImage" className="w-10 rounded-full md:w-12" />
                     <div className="hidden lg:block">
                         <h1 className="text-blue-600 font-medium">{fullname}</h1>
-                        <p className="text-sm text-gray-400">Profile Setting</p>
+                        <Link to='/setting' className="text-sm text-gray-400 dark:text-white">Profile Setting</Link>
                     </div>
                 </div>
                 <div className="flex items-center gap-2 lg:hidden">
+                    <div className="hidden">
+                        <input type="checkbox" checked={isChecked} onChange={handleTheme} id="theme" />
+                    </div>
                     <button onClick={handleTheme} className="btn-theme">
-                        <i className="fa-solid fa-moon text-white"></i>
+                        <i className={ isChecked ? "fa-solid fa-sun text-white" : "fa-solid fa-moon text-white" }></i>
                     </button>
                     <Link to="/setting"><button className="btn-setting">
                         <i className="fa-solid fa-gear text-white"></i>
@@ -48,7 +70,7 @@ const Header = () => {
                     <div onClick={handleTheme} className="btn-theme">
                         <i className="fa-solid fa-moon text-white text-lg"></i>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div onClick={handleLogout} className="cursor-pointer flex items-center gap-1">
                         <i className="fa-solid fa-right-from-bracket text-blue-600 text-base dark:text-white"></i>
                         <p className="text-blue-600 font-medium dark:text-white">Logout</p>
                     </div>
